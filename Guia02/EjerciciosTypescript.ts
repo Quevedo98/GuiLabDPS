@@ -33,3 +33,53 @@ let nuevoPer:Personaje ={
 console.log(`Propiedad nombre de la interfaz = ${nuevoPer.nombre}`)
 
 //Ejercicio 3
+class Empleado{
+    nombre:string;
+    salario:number;
+    constructor(nombre:string,salario:number){
+        this.nombre=nombre;
+        this.salario=salario;
+
+    }
+    deduccionessalariales(des:number)
+    {
+     var total:number;
+     total= this.salario*des;
+     return total;
+    }
+}
+//Ejercicio 4
+class Calculadora
+{
+    numero1:number;
+    numero2:number;
+    constructor(n1:number,n2:number)
+    {
+        this.numero1=n1;
+        this.numero2=n2;
+    }
+     sumar(): number {
+        return this.numero1+this.numero2;
+      }
+       resta(): number {
+        return this.numero1-this.numero2;
+      }
+      
+       div(): number {
+        return this.numero1/this.numero2;
+      }
+     
+       mul(): number {
+        return this.numero1*this.numero2;
+      }
+   calculo( )
+    {
+            
+          console.log("Suma:"+this.sumar());
+          console.log("Resta:"+this.resta());
+          console.log("Division:"+this.div());
+          console.log("Multiplicacion:"+this.mul());
+
+    }
+
+}
