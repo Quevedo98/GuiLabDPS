@@ -41,23 +41,26 @@ class Empleado{
         this.salario=salario;
 
     }
-    deduccionessalariales(des:number)
+    deduccionessalariales():number
     {
-     var total:number;
-     total= this.salario*des;
+     var total:number= this.salario*0.10;
      return total;
     }
 }
+let to = new Empleado("Luis",155);
+let respu:number = to.deduccionessalariales();
+console.log(`El sueldo es = ${respu}`);
 //Ejercicio 4
 class Calculadora
 {
     numero1:number;
     numero2:number;
-    constructor(n1:number,n2:number)
+    constructor(numero1:number,numero2:number)
     {
-        this.numero1=n1;
-        this.numero2=n2;
+        this.numero1=numero1;
+        this.numero2=numero2;
     }
+    
      sumar(): number {
         return this.numero1+this.numero2;
       }
@@ -72,14 +75,12 @@ class Calculadora
        mul(): number {
         return this.numero1*this.numero2;
       }
-   calculo( )
+   calculo():string
     {
-            
-          console.log("Suma:"+this.sumar());
-          console.log("Resta:"+this.resta());
-          console.log("Division:"+this.div());
-          console.log("Multiplicacion:"+this.mul());
-
+        return "Suma:"+this.sumar()+"\n"+"Resta:"+this.resta()+"\n"+"Division:"+this.div()+"\n"+"Multiplicacion:"+this.mul()+"\n";
     }
 
 }
+let calculador = new Calculadora(10,5);
+let respuestaf = calculador.calculo();
+console.log("Las operaciones de los numero "+calculador.numero1+" y "+calculador.numero2+"\n"+respuestaf);
