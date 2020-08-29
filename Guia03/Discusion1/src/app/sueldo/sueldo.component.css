@@ -1,0 +1,59 @@
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+    }
+    input,select {
+    width: 65%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 2vw;
+    }
+    label{
+    font-size: 2vw;
+    }
+    .header {
+    padding: 10px;
+    text-align: center;
+    background: #246355;
+    color: white;
+    font-size: 26px;
+    margin: 15px auto;
+    width: 470px;
+    border-radius: 10px;
+    }
+    body{
+        background-color: #57686483;
+        margin: 0;
+        padding: 5px 19px;
+    }
+
+table{
+    background-color: #57686483;
+    border-collapse: collapse;
+    width: 360px;
+    margin: 10px auto;
+}
+
+th, td{
+    padding: 20px;
+}
+
+thead{
+    background-color: #246355;
+    border-bottom: solid 3px #0f362d;
+    color:white;
+}
+
+.error{
+    color: #e24125;
+   
+}

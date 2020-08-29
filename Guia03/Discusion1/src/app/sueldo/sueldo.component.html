@@ -1,0 +1,46 @@
+<html>
+    <body>
+        <div class="header">
+            <h1>Sueldo</h1>
+            <p>Ingrese una cantidad para calcular el sueldo neto</p>
+           </div>
+          <form (ngSubmit)="calcularNeto()" #clienteform="ngForm">
+            <label>Sueldo:</label>
+            <input type="text" id="sueldo" required [(ngModel)]="sueldo"
+name="sueldo" #name="ngModel">
+ <div class="error" [hidden]="name.valid || name.pristine">
+ Sueldo es requerido
+ </div>
+            <br>   
+            <button type="submit" class="button"[disabled]="!clienteform.form.valid">Calcular</button>
+          </form>
+           <br/><br/>
+           <table [hidden]="ISS == 0">
+            <thead>
+            <tr>
+            <th>Dato</th>
+            <th>Monto</th>    
+            </tr>
+            </thead>
+                <tbody>
+                    <tr>
+                        <td>Descuento de ISS:</td>
+                        <td>${{ISS}}</td>        
+                    </tr>
+                    <tr>
+                        <td>Descuento de AFP:</td>
+                        <td>${{AFP}}</td>        
+                    </tr>
+                    <tr>
+                        <td>Descuento de Renta:</td>
+                        <td>${{renta}}</td>        
+                    </tr>
+                    <tr>
+                        <td>Sueldo neto:</td>
+                        <td>${{sueldoNeto}}</td>        
+                    </tr>
+                </tbody>
+        </table>
+           
+    </body>
+</html>
