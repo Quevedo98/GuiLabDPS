@@ -1,0 +1,58 @@
+<div [hidden]="enviar" >
+  
+    <!--Empieza-->
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+             Guia03,Ejercicio02
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Gasolinera</h5>
+                <form (ngSubmit)="onSubmit()" #clienteform="ngForm">
+                    <div class="form-group">
+                        <label for="tipo">Tipo de gasolina</label>
+                             <select (change)="combustible.calcular()" class="form-control" id="tipo" required [(ngModel)]="combustible.tipo" name="tipo" #tipo="ngModel">
+                             <option *ngFor="let tip of tipoG" [value]="tip">{{tip}}</option>
+                              </select>
+                                 <div [hidden]="tipo.valid || tipo.pristine" class="alert alert-danger">
+                                 Tipo de gasolina es requerida
+                                 </div>
+                     </div>
+            
+            <div class="form-group">
+                <label for="galones">Galones</label>
+                 <input onKeyDown="return false" type="number" min="0.05" max="150" step="0.05" (change)="combustible.calcular()" class="form-control" id="galones" required [(ngModel)]="combustible.galones" name="galones" #galones="ngModel">
+                 <div [hidden]="galones.valid || galones.pristine">
+                 Galones es requerido
+                </div>
+            </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<!--FACTURA-->
+<div>
+        <h2>Factura</h2>
+    
+    <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+                <h6 class="my-0">Cantidad Galones</h6>
+            </div>
+            <span class="text-muted">{{combustible.galones}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+                <h6 class="my-0">Tipo de Gasolina</h6>
+             </div>
+        <span class="text-muted">{{combustible.tipo}}</span>
+        </li>
+    
+        <li class="list-group-item d-flex justify-content-between">
+            <span>Total (USD)</span>
+            <strong>${{combustible.Total.toFixed(2)}}</strong>
+        </li>
+    </ul>
+</div>
