@@ -13,7 +13,9 @@ export class AppComponent {
  art = {
  codigo: 0,
  descripcion: null,
- precio: null
+ precio: null,
+ proveedor: null,
+ fabricante: null
  }
  constructor(private articulosServicio: ArticulosService) { }
  ngOnInit() {
@@ -27,7 +29,7 @@ export class AppComponent {
  if (datos['resultado'] == 'OK') {
  alert(datos['mensaje']);
  this.recuperarTodos();
- this.art = {codigo: 0, descripcion: null, precio: null};
+ this.art = {codigo: 0, descripcion: null, precio: null, proveedor: null, fabricante: null};
  }
  });
  }
@@ -46,7 +48,7 @@ export class AppComponent {
   if (datos['resultado'] == 'OK') {
     alert(datos['mensaje']);
     this.recuperarTodos();
-    this.art = {codigo: 0, descripcion: null, precio: null};
+    this.art = {codigo: 0, descripcion: null, precio: null,  proveedor: null, fabricante: null};
     }
     });
     }
